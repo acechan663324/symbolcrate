@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-type View = 'home' | 'generator' | 'saved' | 'platform' | 'blog' | 'blogDetail' | 'pricing';
+type View = 'home' | 'generator' | 'saved' | 'platform' | 'blog' | 'blogDetail' | 'pricing' | 'symbolArt';
 
 interface UserInfo {
   email: string;
@@ -62,6 +62,9 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, userInfo, onSi
               </button>
               <button onClick={() => onNavigate('generator')} className={navLinkClasses('generator')}>
                 Generator
+              </button>
+              <button onClick={() => onNavigate('symbolArt')} className={navLinkClasses('symbolArt')}>
+                Symbol Art
               </button>
               <button onClick={() => onNavigate('blog')} className={navLinkClasses('blog')}>
                 Blog

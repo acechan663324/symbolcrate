@@ -19,10 +19,11 @@ import GeneratorStudio from './components/GeneratorStudio';
 import Sidebar from './components/Sidebar';
 import AuthModal from './components/AuthModal';
 import PricingPage from './components/PricingPage';
+import SymbolArtPage from './components/SymbolArtPage';
 
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-type View = 'home' | 'generator' | 'saved' | 'platform' | 'blog' | 'blogDetail' | 'pricing';
+type View = 'home' | 'generator' | 'saved' | 'platform' | 'blog' | 'blogDetail' | 'pricing' | 'symbolArt';
 
 interface UserInfo {
   email: string;
@@ -394,6 +395,8 @@ const App: React.FC = () => {
     switch (currentView) {
       case 'pricing':
         return <PricingPage onSubscribe={handleSubscribe} />;
+      case 'symbolArt':
+        return <SymbolArtPage showToast={showToast} onCopy={handleCopy} />;
       case 'generator':
         return <GeneratorPage 
           showToast={showToast} 
